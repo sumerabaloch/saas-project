@@ -1,0 +1,508 @@
+/* ========================================
+   PROJECT DETAILS - BRUTALIST MINIMALISM
+   Raw materials, bold typography,
+   maximum clarity, refined restraint
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Bold primary - deep slate blue */
+  --primary-dark: #1a1f3a;
+  --primary-main: #2c3556;
+  --primary-light: #4a5578;
+  
+  /* Accent - electric lime */
+  --accent-dark: #6ba82a;
+  --accent-main: #8fd629;
+  --accent-light: #b8e639;
+  
+  /* Raw materials - honest grays */
+  --white: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f3f3f3;
+  --gray-200: #e8e8e8;
+  --gray-300: #d5d5d5;
+  --gray-400: #b3b3b3;
+  --gray-500: #808080;
+  --gray-600: #4d4d4d;
+  --gray-700: #2a2a2a;
+  --gray-900: #0a0a0a;
+  
+  /* Status */
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #f59e0b;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 4rem;
+  
+  /* Radius - minimal, honest */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  
+  /* Shadows - strong, clear */
+  --shadow-none: none;
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.15);
+  
+  /* No transitions - instant feedback */
+  --transition: 0ms;
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--white);
+  color: var(--gray-700);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================================
+   PAGE LAYOUT
+   ======================================== */
+
+.project-details {
+  min-height: 100vh;
+  background: var(--white);
+  padding: var(--spacing-xl) var(--spacing-xl);
+  border-left: 1px solid var(--gray-200);
+  border-right: 1px solid var(--gray-200);
+}
+
+/* ========================================
+   PROJECT HEADER
+   ======================================== */
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--primary-dark);
+}
+
+/* ========================================
+   BREADCRUMB
+   ======================================== */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.8rem;
+  color: var(--gray-500);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.breadcrumb a {
+  color: var(--primary-main);
+  font-weight: 700;
+  border-bottom: 1px solid var(--primary-main);
+  transition: all var(--transition);
+}
+
+.breadcrumb a:hover {
+  color: var(--accent-main);
+  border-bottom-color: var(--accent-main);
+}
+
+.breadcrumb > :nth-child(2) {
+  color: var(--gray-300);
+}
+
+.breadcrumb span {
+  color: var(--gray-700);
+  font-weight: 700;
+}
+
+/* ========================================
+   HEADER TITLE & DESCRIPTION
+   ======================================== */
+
+.project-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.project-header > div > p {
+  font-size: 1rem;
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+  max-width: 520px;
+  font-weight: 400;
+}
+
+/* ========================================
+   PROJECT META
+   ======================================== */
+
+.project-meta {
+  display: flex;
+  gap: var(--spacing-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.project-meta span {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--gray-300);
+  background: var(--white);
+  transition: all var(--transition);
+}
+
+.project-meta span:hover {
+  border-color: var(--accent-main);
+  background: var(--gray-50);
+}
+
+/* ========================================
+   PROJECT ACTIONS
+   ======================================== */
+
+.project-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  min-width: 160px;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 2px solid;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  min-height: 40px;
+  font-family: 'Outfit', sans-serif;
+  white-space: nowrap;
+}
+
+/* Primary Button - Bright accent */
+.btn-primary {
+  background: var(--accent-main);
+  color: var(--gray-900);
+  border-color: var(--accent-main);
+  box-shadow: var(--shadow-xs);
+  font-weight: 800;
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Danger Button */
+.btn-danger {
+  background: var(--white);
+  color: var(--error);
+  border-color: var(--error);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-danger:hover {
+  background: rgba(239, 68, 68, 0.1);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-danger:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-xs);
+}
+
+/* ========================================
+   LOADING & ERROR STATES
+   ======================================== */
+
+.project-details > p {
+  padding: var(--spacing-xl);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  font-size: 1rem;
+  color: var(--gray-600);
+  font-weight: 500;
+}
+
+.project-details > p[style*="color: red"] {
+  background: rgba(239, 68, 68, 0.05);
+  color: var(--error);
+  border-color: var(--error);
+}
+
+/* ========================================
+   FOCUS STATES
+   ======================================== */
+
+.btn:focus-visible,
+.breadcrumb a:focus-visible {
+  outline: 3px solid var(--accent-main);
+  outline-offset: 2px;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .project-header {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    align-items: stretch;
+  }
+
+  .project-actions {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .project-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-details {
+    padding: var(--spacing-lg) var(--spacing-lg);
+  }
+
+  .project-header {
+    gap: var(--spacing-lg);
+  }
+
+  .project-header h1 {
+    font-size: 2rem;
+  }
+
+  .project-header > div > p {
+    font-size: 0.95rem;
+  }
+
+  .project-meta {
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+  }
+
+  .project-meta span {
+    font-size: 0.75rem;
+    padding: var(--spacing-sm);
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-details {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .project-header {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .breadcrumb {
+    font-size: 0.7rem;
+    gap: var(--spacing-xs);
+  }
+
+  .project-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .project-header > div > p {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-meta {
+    gap: var(--spacing-xs);
+  }
+
+  .project-meta span {
+    font-size: 0.7rem;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .project-actions {
+    gap: var(--spacing-sm);
+    width: 100%;
+  }
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.75rem;
+    min-height: 36px;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   DARK MODE
+   ======================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --white: #0a0a0a;
+    --gray-50: #1a1a1a;
+    --gray-100: #242424;
+    --gray-200: #333333;
+    --gray-300: #4a4a4a;
+    --gray-400: #666666;
+    --gray-500: #999999;
+    --gray-600: #cccccc;
+    --gray-700: #e8e8e8;
+    --gray-900: #ffffff;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  .project-details {
+    background: var(--white);
+    border-left-color: var(--gray-200);
+    border-right-color: var(--gray-200);
+  }
+
+  .project-header {
+    border-bottom-color: var(--primary-light);
+  }
+
+  .project-header h1 {
+    color: var(--gray-900);
+  }
+
+  .project-header > div > p {
+    color: var(--gray-600);
+  }
+
+  .breadcrumb {
+    color: var(--gray-500);
+  }
+
+  .breadcrumb a {
+    color: var(--accent-main);
+    border-bottom-color: var(--accent-main);
+  }
+
+  .breadcrumb span {
+    color: var(--gray-700);
+  }
+
+  .project-meta span {
+    border-color: var(--gray-300);
+    background: var(--gray-50);
+  }
+
+  .project-meta span:hover {
+    border-color: var(--accent-light);
+    background: var(--gray-100);
+  }
+
+  .btn-primary {
+    color: var(--gray-900);
+  }
+
+  .btn-secondary {
+    border-color: var(--gray-300);
+  }
+
+  .project-details > p {
+    background: var(--gray-100);
+    border-color: var(--gray-300);
+    color: var(--gray-600);
+  }
+
+  .project-details > p[style*="color: red"] {
+    background: rgba(239, 68, 68, 0.1);
+    color: #fca5a5;
+  }
+}
